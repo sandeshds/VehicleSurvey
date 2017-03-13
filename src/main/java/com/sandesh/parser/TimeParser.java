@@ -1,4 +1,4 @@
-package com.sandesh.helpers;
+package com.sandesh.parser;
 
 import com.sandesh.constants.TimeConstants;
 
@@ -19,10 +19,10 @@ public class TimeParser {
     public static double convertToHour(int milliseconds){
         if (milliseconds <0 )
             return -1;
-        double minutesInHour = TimeConstants.MINUTES_IN_A_HOUR;
-        double secondsInMinute = TimeConstants.SECONDS_IN_A_MINUTE;
-        double milliSecondsInSecond = TimeConstants.MILLISECONDS_IN_A_SECOND;
-        return ((double)milliseconds)/(milliSecondsInSecond * secondsInMinute * minutesInHour);
+        double minutesInAnHour = TimeConstants.MINUTES_IN_HOUR;
+        double secondsInAMinute = TimeConstants.SECONDS_IN_A_MINUTE;
+        double milliSecondsInASecond = TimeConstants.MILLISECONDS_IN_A_SECOND;
+        return ((double)milliseconds)/(milliSecondsInASecond * secondsInAMinute * minutesInAnHour);
     }
 
 }

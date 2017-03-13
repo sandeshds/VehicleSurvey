@@ -1,6 +1,8 @@
 package com.sandesh.model;
 
+import com.sandesh.constants.Common;
 import com.sandesh.constants.TimeConstants;
+import com.sandesh.parser.TimeParser;
 
 import java.util.Date;
 
@@ -38,5 +40,12 @@ public class VehicleEntry {
 
     public int getDay() {
         return day;
+    }
+
+    public double speedInKMPH(){
+        if (!isValidEntry())
+            return 0;
+        double timeTakenToPassCounter = TimeParser.convertToHour(rearAxleTime - frontAxleTime);
+        return Common.LENGTH_OF_VEHICLE / timeTakenToPassCounter;
     }
 }

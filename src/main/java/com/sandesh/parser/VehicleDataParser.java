@@ -1,7 +1,6 @@
 package com.sandesh.parser;
 
 import com.sandesh.constants.Common;
-import com.sandesh.helpers.TimeParser;
 import com.sandesh.model.Direction;
 import com.sandesh.model.VehicleEntry;
 import com.sandesh.model.VehicleEntryException;
