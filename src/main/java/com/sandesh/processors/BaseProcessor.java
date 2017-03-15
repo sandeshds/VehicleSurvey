@@ -12,15 +12,10 @@ public abstract class BaseProcessor implements DataProcessor {
     public abstract String processData(List<VehicleEntry> entries);
 
     protected List<VehicleEntry> getEntriesInSession(List<VehicleEntry> vehicleEntries, Session session) {
-        return vehicleEntries
-                .stream()
-                .filter(vehicleEntry -> isWithinSession(session, vehicleEntry))
+        return vehicleEntries.stream().
+                filter(entry -> entry.entryTime().compareTo(session.startTime) >= 0
+                        && entry.entryTime().compareTo(session.endTime) < 0)
                 .collect(Collectors.toList());
-    }
-
-    private boolean isWithinSession(Session session, VehicleEntry vehicleEntry) {
-        return vehicleEntry.entryTime().compareTo(session.startTime) >= 0
-                && vehicleEntry.entryTime().compareTo(session.endTime) < 0;
     }
 
     protected List<VehicleEntry> getEntriesInDirection(List<VehicleEntry> vehicleEntries, Direction direction) {

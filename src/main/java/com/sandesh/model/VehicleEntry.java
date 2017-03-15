@@ -16,6 +16,7 @@ public class VehicleEntry {
         this.frontAxleTime = frontAxleTime;
         this.rearAxleTime = rearAxleTime;
         this.direction = direction;
+        this.day = day;
     }
 
     public boolean isValidEntry(){
@@ -47,5 +48,14 @@ public class VehicleEntry {
             return 0;
         double timeTakenToPassCounter = TimeParser.convertToHour(rearAxleTime - frontAxleTime);
         return Common.LENGTH_OF_VEHICLE / timeTakenToPassCounter;
+    }
+
+    @Override
+    public String toString() {
+        return "VehicleEntry{" +
+                "frontAxleTime=" + frontAxleTime +
+                ", rearAxleTime=" + rearAxleTime +
+                ", direction=" + direction +
+                '}';
     }
 }

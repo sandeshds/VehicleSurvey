@@ -47,7 +47,7 @@ public class App {
     public static void main(String[] args) {
         FileReader fileReader = new FileReader();
 
-        int[] intervalsInMinutes = {720, 60, 30, 20, 15};
+        int[] intervalsInMinutes = {30, 20, 15};
         Map<String, DataProcessor> dataProcessorMap = createProcessors(intervalsInMinutes);
 
         new App(fileReader, dataProcessorMap).run();
